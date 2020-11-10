@@ -1,0 +1,14 @@
+.toDoItem {
+  border: 1px #d3d3d3 solid;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.toDoItem .toDoCheck {
+  margin-right: 10px;
+}
+
+.indivMenu {
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "pageName": "Groceries",
+    "listedToDos": [
+      {
+        "key": 1,
+        "taskName": "Get Milk",
+        "urgency": 0
+      },
+      {
+        "key": 2,
+        "taskName": "Get Curry",
+        "urgency": 1,
+        "description": "the Baker brand, not Johnson's brand",
+        "repeat": "never"
+      },
+      {
+        "key": 3,
+        "taskName": "Party Supplies",
+        "nested": true,
+        "nestedToDo": ["Pizza", "Plastic Forks and Spoon"]
+      },
+      {
+        "key": 4,
+        "taskName": "Get wine",
+        "urgency": 1,
+        "description": "for myself lol",
+        "repeat": "never"
+      }
+    ]
+  },
+  {
+    "pageName": "Work",
+    "listedToDos": [
+      {
+        "key": 5,
+        "taskName": "Meeting at 3",
+        "urgency": 1,
+        "time": "4:30PM"
+      }
+    ]
+  }
+]

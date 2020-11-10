@@ -1,0 +1,21 @@
+/* this is for the description */
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+* {
+  font-family: "Nanum Gothic", sans-serif;
+}
+.description {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  color: white;
+  width: 260px;
+  height: 640px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  box-shadow: inset 0 0 0, 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.description span {
+  color: white;
+  z-index: 1;
+}
