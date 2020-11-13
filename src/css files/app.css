@@ -1,7 +1,7 @@
 .app {
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   /* justify-content needs display first */
 }
 
@@ -9,7 +9,7 @@
   background-image: linear-gradient(to bottom right, #2193b0, #6dd5ed);
   position: relative;
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   width: 100%;
   height: inherit;
 }

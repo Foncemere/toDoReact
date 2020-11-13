@@ -12,7 +12,10 @@ class Page extends Component {
     visibility: "hidden",
     pointerEvents: "none",
     descVisibility: false,
+    titleProp: "",
     descriptionProp: "",
+    nested: true,
+    nestedToDo: [],
   };
 
   //used to delete state.listedItems tasks
@@ -24,7 +27,12 @@ class Page extends Component {
   };
 
   handleDescription = (prop) => {
-    this.setState({ descriptionProp: prop.taskName });
+    this.setState({
+      titleProp: prop.taskName,
+      descriptionProp: prop.description,
+      nested: prop.nested,
+      nestedToDo: prop.nestedToDo,
+    });
     if (this.state.descVisibility) {
       this.setState({
         visibility: "hidden",
@@ -81,13 +89,18 @@ class Page extends Component {
             />
           </div>
         </div>
+        {/* description code here */}
         <div
           className={"description"}
           style={{
             visibility: this.state.visibility,
             pointerEvents: this.state.pointerEvents,
           }}>
+          <div>{this.state.titleProp}</div>
           <div>{this.state.descriptionProp}</div>
+          <div>
+            {this.state.nested ? this.state.nestedToDo : "nothing is hereeeee"}
+          </div>
         </div>
       </div>
     );

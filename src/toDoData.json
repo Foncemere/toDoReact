@@ -5,6 +5,7 @@
       {
         "key": 1,
         "taskName": "Get Milk",
+        "nested": false,
         "urgency": 0
       },
       {
@@ -12,6 +13,7 @@
         "taskName": "Get Curry",
         "urgency": 1,
         "description": "the Baker brand, not Johnson's brand",
+        "nested": false,
         "repeat": "never"
       },
       {
@@ -25,6 +27,7 @@
         "taskName": "Get wine",
         "urgency": 1,
         "description": "for myself lol",
+        "nested": false,
         "repeat": "never"
       }
     ]
