@@ -19,3 +19,16 @@
   color: white;
   z-index: 1;
 }
+
+.description .descriptionprop {
+  background: none;
+  padding: 10px;
+  resize: none;
+  max-width: 200px;
+  height: auto;
+  border: white solid 1px;
+}
+
+.nested {
+  background-color: red;
+}

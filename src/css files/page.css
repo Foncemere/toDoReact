@@ -3,6 +3,13 @@
 * {
   font-family: "Nanum Gothic", sans-serif;
 }
+
+.parentContainer {
+  display: inherit;
+  justify-content: center;
+  min-width: 100%;
+}
+
 .container {
   display: inherit;
   margin: 100px;
@@ -20,6 +27,8 @@
 .pageTitle {
   font-size: 30px;
   padding-top: 1em;
+  border: none;
+  text-align: center;
 }
 
 hr {

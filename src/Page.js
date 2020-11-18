@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./css files/page.css";
 import "./css files/description.css";
 import ToDoItem from "./ToDoItem";
+// import Description from "./Description";
 
 class Page extends Component {
   //to access these states, use this.state.(word)
@@ -10,12 +11,12 @@ class Page extends Component {
     listedItems: this.props.listedToDos || [],
     readyAddTask: "",
     visibility: "hidden",
-    pointerEvents: "none",
     descVisibility: false,
     titleProp: "",
     descriptionProp: "",
     nested: true,
     nestedToDo: [],
+    pageName: this.props.pageName,
   };
 
   //used to delete state.listedItems tasks
@@ -36,13 +37,13 @@ class Page extends Component {
     if (this.state.descVisibility) {
       this.setState({
         visibility: "hidden",
-        pointerEvents: "none",
+        // pointerEvents: "none",
         descVisibility: false,
       });
     } else {
       this.setState({
         visibility: "visible",
-        pointerEvents: "all",
+        // pointerEvents: "all",
         descVisibility: true,
       });
     }
@@ -74,32 +75,50 @@ class Page extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <div className='page'>
-          <div className='pageTitle'> {this.props.pageName} </div>
-          <div className='toDoList'>{this.display()}</div>
-          <div className='footer'>
-            <div className='submitNewTask' onClick={this.handleClick}>
-              +
-            </div>
+      <div className='parentContainer'>
+        <div className='container'>
+          <div className='page'>
             <input
-              className='newTaskInput'
-              onChange={(e) => this.setState({ readyAddTask: e.target.value })}
-              placeholder='Add new task.'
+              className='pageTitle'
+              value={this.state.pageName}
+              onChange={(e) => {
+                this.setState({ pageName: e.target.value });
+              }}
             />
+            <div className='toDoList'>{this.display()}</div>
+            <div className='footer'>
+              <div className='submitNewTask' onClick={this.handleClick}>
+                +
+              </div>
+              <input
+                className='newTaskInput'
+                onChange={(e) =>
+                  this.setState({ readyAddTask: e.target.value })
+                }
+                placeholder='Add new task.'
+              />
+            </div>
           </div>
-        </div>
-        {/* description code here */}
-        <div
-          className={"description"}
-          style={{
-            visibility: this.state.visibility,
-            pointerEvents: this.state.pointerEvents,
-          }}>
-          <div>{this.state.titleProp}</div>
-          <div>{this.state.descriptionProp}</div>
-          <div>
-            {this.state.nested ? this.state.nestedToDo : "nothing is hereeeee"}
+          {/* description code here */}
+          <div
+            className={"description"}
+            style={{
+              visibility: this.state.visibility,
+              // pointerEvents: this.state.pointerEvents,
+            }}>
+            <div>{this.state.titleProp}</div>
+            <textarea
+              className='descriptionprop'
+              value={this.state.descriptionProp}
+              onChange={(e) => {
+                this.setState({ descriptionProp: e.target.value });
+              }}
+            />
+            <div className={"nested"}>
+              {this.state.nested
+                ? this.state.nestedToDo
+                : "nothing is hereeeee"}
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,4 @@
 .app {
-  height: 100%;
   display: flex;
   justify-content: left;
   /* justify-content needs display first */
@@ -12,4 +11,12 @@
   /* overflow-y: hidden; */
   width: 100%;
   height: inherit;
+}
+
+.left-paddle.paddle {
+  background-color: rgb(209, 248, 177);
+}
+
+.right-paddle.paddle {
+  background-color: rgb(230, 145, 238);
 }
