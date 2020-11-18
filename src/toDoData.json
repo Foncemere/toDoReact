@@ -6,7 +6,9 @@
         "key": 1,
         "taskName": "Get Milk",
         "nested": false,
-        "urgency": 0
+        "description": "",
+        "urgency": 0,
+        "nestedToDo": []
       },
       {
         "key": 2,
@@ -14,12 +16,14 @@
         "urgency": 1,
         "description": "the Baker brand, not Johnson's brand",
         "nested": false,
-        "repeat": "never"
+        "repeat": "never",
+        "nestedToDo": []
       },
       {
         "key": 3,
         "taskName": "Party Supplies",
         "nested": true,
+        "description": "",
         "nestedToDo": ["Pizza", "Plastic Forks and Spoon"]
       },
       {
@@ -28,7 +32,8 @@
         "urgency": 1,
         "description": "for myself lol",
         "nested": false,
-        "repeat": "never"
+        "repeat": "never",
+        "nestedToDo": []
       }
     ]
   },
@@ -38,8 +43,10 @@
       {
         "key": 5,
         "taskName": "Meeting at 3",
+        "description": "",
         "urgency": 1,
-        "time": "4:30PM"
+        "time": "4:30PM",
+        "nestedToDo": []
       }
     ]
   }

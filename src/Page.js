@@ -1,20 +1,18 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from "react";
 import "./css files/page.css";
-import "./css files/description.css";
 import ToDoItem from "./ToDoItem";
 import Description from "./Description";
+import SvgComponent from "./svg files/SvgComponent";
 
 class Page extends Component {
   //to access these states, use this.state.(word)
   state = {
     listedItems: this.props.listedToDos || [],
     readyAddTask: "",
-    visibility: "hidden",
-    descVisibility: false,
-    titleProp: "",
     pageName: this.props.pageName,
   };
+  descRef = React.createRef();
 
   //used to delete state.listedItems tasks
   deleteHandle = (id) => {
@@ -29,8 +27,8 @@ class Page extends Component {
       <ToDoItem
         key={item.key}
         item={item}
+        descRef={this.descRef}
         delete={this.deleteHandle}
-        handleDescription={this.handleDescription}
       />
     ));
   };
@@ -41,11 +39,15 @@ class Page extends Component {
     const tempObject = {
       key: new Date().getTime(),
       taskName: this.state.readyAddTask,
-      urgency: 0,
+      nestedToDo: [],
     };
     // NEVER mutate this.state directly, as calling setState() afterwards may replace the mutation you made.
     const joined = this.state.listedItems.concat(tempObject);
-    this.setState({ listedItems: joined });
+    if (this.state.readyAddTask !== "") {
+      this.setState({ listedItems: joined });
+    }
+    // this is how to get element, it has an array, apperently
+    document.getElementsByClassName("newTaskInput")[0].value = "";
   };
 
   render() {
@@ -62,9 +64,10 @@ class Page extends Component {
             />
             <div className='toDoList'>{this.display()}</div>
             <div className='footer'>
-              <div className='submitNewTask' onClick={this.handleClick}>
-                +
-              </div>
+              <SvgComponent
+                className='submitNewTask'
+                onClick={this.handleClick}
+              />
               <input
                 className='newTaskInput'
                 onChange={(e) =>
@@ -75,10 +78,7 @@ class Page extends Component {
             </div>
           </div>
           {/* description code here */}
-          <Description
-            visibility={this.state.descVisibility}
-            {...this.state.listedItems}
-          />
+          <Description ref={this.descRef} {...this.state.listedItems} />
         </div>
       </div>
     );

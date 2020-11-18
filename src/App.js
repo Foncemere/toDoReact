@@ -11,6 +11,8 @@ class App extends Component {
     pages: pageNumber,
     rightButtonVisibility: "visible",
     leftButtonVisibility: "hidden",
+    gradientOne: "2193b0",
+    gradientTwo: "6dd5ed",
   };
 
   showButtons = () => {
@@ -53,7 +55,13 @@ class App extends Component {
           ...this.state.pagesAvailable,
           this.state.pagesAvailable.length,
         ],
-        pages: [...this.state.pages, { pageName: "empty", listedToDos: [] }],
+        pages: [
+          ...this.state.pages,
+          {
+            pageName: "empty",
+            listedToDos: [],
+          },
+        ],
       },
       this.showButtons
     );
@@ -61,7 +69,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className='app-wrapper'>
+      <div
+        className='app-wrapper'
+        style={{
+          backgroundImage: `linear-gradient(to bottom right, #${this.state.gradientOne}, #${this.state.gradientTwo})`,
+        }}>
         <div
           className='app'
           style={{
@@ -72,21 +84,21 @@ class App extends Component {
             return <Page key={item} {...this.state.pages[item]} />;
           })}
         </div>
-        <button className='newPageButton' onClick={this.createNewPage}>
-          {" Create new Page "}
-        </button>
         <div className='paddles'>
           <button
-            className='left-paddle paddle'
+            className='paddle left-paddle'
             onClick={this.goLeft}
             style={{ visibility: this.state.leftButtonVisibility }}>
-            {" Left "}
+            {" < "}
+          </button>
+          <button className='newPageButton' onClick={this.createNewPage}>
+            {" Create new Page "}
           </button>
           <button
-            className='right-paddle paddle'
+            className='paddle right-paddle'
             onClick={this.goRight}
             style={{ visibility: this.state.rightButtonVisibility }}>
-            {" Right "}
+            {" > "}
           </button>
         </div>
       </div>

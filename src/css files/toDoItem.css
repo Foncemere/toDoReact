@@ -3,6 +3,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
+  position: relative;
 }
 
 .toDoItem .toDoCheck {
@@ -11,4 +12,16 @@
 
 .indivMenu {
   cursor: pointer;
+  position: absolute;
+}
+
+.indivMenu.desc {
+  right: 15px;
+  width: 20px;
+  height: 20px;
+}
+.indivMenu.del {
+  right: 45px;
+  width: 20px;
+  height: 20px;
 }

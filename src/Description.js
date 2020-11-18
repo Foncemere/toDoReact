@@ -1,12 +1,18 @@
 import React, { Component } from "react";
+import "./css files/description.css";
+import SvgComponentWhite from "./svg files/SvgAddWhite";
 
 class Description extends Component {
   state = {
-    visibility: "hidden",
+    pointerEvents: "none",
     descVisibility: false,
     descriptionProp: "",
-    nested: true,
+    nested: false,
     nestedToDo: [],
+    titleProp: "",
+    readyAddNestedTask: "",
+    holder: "",
+    x: -360,
   };
 
   handleDescription = (prop) => {
@@ -16,38 +22,69 @@ class Description extends Component {
       nested: prop.nested,
       nestedToDo: prop.nestedToDo,
     });
-    if (this.state.descVisibility) {
+    if (this.state.descVisibility && this.state.holder === prop.taskName) {
       this.setState({
-        visibility: "hidden",
+        pointerEvents: "none",
         descVisibility: false,
+        holder: prop.taskName,
+        x: -360,
       });
     } else {
       this.setState({
-        visibility: "visible",
+        pointerEvents: "all",
         descVisibility: true,
+        holder: prop.taskName,
+        x: 0,
       });
     }
   };
 
+  handleNestedClick = () => {
+    const tempObject = this.state.readyAddNestedTask;
+    const joined = this.state.nestedToDo.concat(tempObject);
+    console.log(Object.values(this.state));
+    if (this.state.readyAddNestedTask !== "") {
+      this.setState({ nestedToDo: joined });
+    }
+    document.getElementsByClassName("nestedInput")[0].value = "";
+  };
+
   render() {
-    console.log(this.props);
     return (
       <div
         className={"description"}
         style={{
-          visibility: this.state.visibility,
-          // pointerEvents: this.state.pointerEvents,
+          pointerEvents: this.state.pointerEvents,
+          transform: `translateX(${this.state.x}px)`,
+          transition: "transform 1s",
         }}>
-        <div>{this.state.titleProp}</div>
+        <div style={{ paddingTop: "20px" }}>{this.state.titleProp}</div>
         <textarea
-          className='descriptionprop'
+          className='descriptionProp'
           value={this.state.descriptionProp}
           onChange={(e) => {
             this.setState({ descriptionProp: e.target.value });
           }}
         />
-        <div>
-          {this.state.nested ? this.state.nestedToDo : "nothing is hereeeee"}
+        <div className='nestedInputForm'>
+          <input
+            className='nestedInput'
+            onChange={(e) =>
+              this.setState({ readyAddNestedTask: e.target.value })
+            }
+            placeholder='Add new subtask.'
+          />
+          <SvgComponentWhite
+            className='nestedAcceptButton'
+            onClick={this.handleNestedClick}
+          />
+        </div>
+        <div className='nestedList'>
+          {this.state.nestedToDo.map((item) => (
+            // change to a checkbox
+            // eslint-disable-next-line react/jsx-key
+            <div id='nestedItem'> {item} </div>
+          ))}
         </div>
       </div>
     );
