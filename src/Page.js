@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./css files/page.css";
 import "./css files/description.css";
 import ToDoItem from "./ToDoItem";
-// import Description from "./Description";
+import Description from "./Description";
 
 class Page extends Component {
   //to access these states, use this.state.(word)
@@ -13,9 +13,6 @@ class Page extends Component {
     visibility: "hidden",
     descVisibility: false,
     titleProp: "",
-    descriptionProp: "",
-    nested: true,
-    nestedToDo: [],
     pageName: this.props.pageName,
   };
 
@@ -25,28 +22,6 @@ class Page extends Component {
       (x) => x.key !== id
     );
     this.setState({ listedItems: revisedListDelete });
-  };
-
-  handleDescription = (prop) => {
-    this.setState({
-      titleProp: prop.taskName,
-      descriptionProp: prop.description,
-      nested: prop.nested,
-      nestedToDo: prop.nestedToDo,
-    });
-    if (this.state.descVisibility) {
-      this.setState({
-        visibility: "hidden",
-        // pointerEvents: "none",
-        descVisibility: false,
-      });
-    } else {
-      this.setState({
-        visibility: "visible",
-        // pointerEvents: "all",
-        descVisibility: true,
-      });
-    }
   };
 
   display = () => {
@@ -100,26 +75,10 @@ class Page extends Component {
             </div>
           </div>
           {/* description code here */}
-          <div
-            className={"description"}
-            style={{
-              visibility: this.state.visibility,
-              // pointerEvents: this.state.pointerEvents,
-            }}>
-            <div>{this.state.titleProp}</div>
-            <textarea
-              className='descriptionprop'
-              value={this.state.descriptionProp}
-              onChange={(e) => {
-                this.setState({ descriptionProp: e.target.value });
-              }}
-            />
-            <div className={"nested"}>
-              {this.state.nested
-                ? this.state.nestedToDo
-                : "nothing is hereeeee"}
-            </div>
-          </div>
+          <Description
+            visibility={this.state.descVisibility}
+            {...this.state.listedItems}
+          />
         </div>
       </div>
     );

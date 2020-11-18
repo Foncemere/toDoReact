@@ -8,7 +8,29 @@ class Description extends Component {
     nested: true,
     nestedToDo: [],
   };
+
+  handleDescription = (prop) => {
+    this.setState({
+      titleProp: prop.taskName,
+      descriptionProp: prop.description,
+      nested: prop.nested,
+      nestedToDo: prop.nestedToDo,
+    });
+    if (this.state.descVisibility) {
+      this.setState({
+        visibility: "hidden",
+        descVisibility: false,
+      });
+    } else {
+      this.setState({
+        visibility: "visible",
+        descVisibility: true,
+      });
+    }
+  };
+
   render() {
+    console.log(this.props);
     return (
       <div
         className={"description"}
