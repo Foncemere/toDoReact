@@ -19,15 +19,12 @@ class App extends Component {
   };
 
   showButtons = () => {
-    if (this.state.pageSelected === 0) {
+    if (this.state.x === 0) {
       this.setState({
         leftButtonVisibility: "hidden",
         rightButtonVisibility: "visible",
       });
-    } else if (
-      this.state.pageSelected ===
-      this.state.pagesAvailable.length - 1
-    ) {
+    } else if (this.state.x === (this.state.pagesAvailable.length - 1) * -100) {
       this.setState({
         leftButtonVisibility: "visible",
         rightButtonVisibility: "hidden",
@@ -105,7 +102,9 @@ class App extends Component {
                 return (
                   <div
                     className='pageElement'
-                    onClick={() => this.setState({ x: index * -100 })}
+                    onClick={() =>
+                      this.setState({ x: index * -100 }, this.showButtons)
+                    }
                     key={item.key}>
                     {item.pageName}
                   </div>
@@ -128,7 +127,7 @@ class App extends Component {
             </div>
             <div
               className='swatch three'
-              onClick={() => this.selectedColor("C6FFDD", "FBD786")}>
+              onClick={() => this.selectedColor("7be2a4", "faca59")}>
               {"LIFE"}
             </div>
             <br />
@@ -155,16 +154,27 @@ class App extends Component {
             </div>
             <div
               className='swatch eight'
-              onClick={() => this.selectedColor("ff9966 ", "ffedbc")}>
-              {"PEACH"}
+              onClick={() => this.selectedColor("380036", "0CBABA")}>
+              {"ASTRAL"}
             </div>
             <div
               className='swatch nine'
               onClick={() => this.selectedColor("2c3e50", "bdc3c7")}>
               {"MOON"}
             </div>
+            <br />
+            <div
+              className='swatch ten'
+              onClick={() => this.selectedColor("6d0101", "fe5b5b")}>
+              {"DEVIL"}
+            </div>
+            <div
+              className='swatch eleven'
+              onClick={() => this.selectedColor("C9FFBF", "FFAFBD")}>
+              {"Palm"}
+            </div>
+            <hr />
           </div>
-          <div className='listOfToDo'></div>
         </div>
         <div
           className='app-wrapper'

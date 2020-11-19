@@ -52,12 +52,13 @@
   cursor: pointer;
 }
 /* swatches css */
+
 .swatches {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   color: white;
-  position: relative;
 }
 
 .swatch {
@@ -70,6 +71,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-radius: 35px;
 }
 
 .swatch:hover {
@@ -83,7 +85,7 @@
   background-image: linear-gradient(to bottom right, #67b26f, #4ca2cd);
 }
 .swatch.three {
-  background-image: linear-gradient(to bottom right, #c6ffdd, #fbd786);
+  background-image: linear-gradient(to bottom right, #7be2a4, #faca59);
 }
 .swatch.four {
   background-image: linear-gradient(to bottom right, #7b4397, #dc4024);
@@ -98,10 +100,16 @@
   background-image: linear-gradient(to bottom right, #870000, #190a05);
 }
 .swatch.eight {
-  background-image: linear-gradient(to bottom right, #ff9966, #ffedbc);
+  background-image: linear-gradient(to bottom right, #380036, #0cbaba);
 }
 .swatch.nine {
   background-image: linear-gradient(to bottom right, #2c3e50, #bdc3c7);
+}
+.swatch.ten {
+  background-image: linear-gradient(to bottom right, #6d0101, #fe5b5b);
+}
+.swatch.eleven {
+  background-image: linear-gradient(to bottom right, #c9ffbf, #ffafbd);
 }
 
 /* List of Pages */
