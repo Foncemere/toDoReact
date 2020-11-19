@@ -111,7 +111,9 @@
 .swatch.eleven {
   background-image: linear-gradient(to bottom right, #3a6186, #89253e);
 }
-
+.swatch.twelve {
+  background-image: linear-gradient(to bottom right, #1f4037, #99f2c8);
+}
 /* List of Pages */
 
 .parentList {
