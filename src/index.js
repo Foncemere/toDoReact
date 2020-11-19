@@ -170,8 +170,8 @@ class App extends Component {
             </div>
             <div
               className='swatch eleven'
-              onClick={() => this.selectedColor("C9FFBF", "FFAFBD")}>
-              {"Palm"}
+              onClick={() => this.selectedColor("3a6186", "89253e")}>
+              {"PALM"}
             </div>
             <hr />
           </div>
