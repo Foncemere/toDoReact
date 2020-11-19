@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./css files/description.css";
+import NestedToDo from "./NestedToDo";
 import SvgComponentWhite from "./svg files/SvgAddWhite";
 
 class Description extends Component {
@@ -41,7 +42,10 @@ class Description extends Component {
 
   handleNestedClick = () => {
     const tempObject = this.state.readyAddNestedTask;
-    const joined = this.state.nestedToDo.concat(tempObject);
+    const joined = this.state.nestedToDo.concat({
+      item: tempObject,
+      key: new Date().getTime(),
+    });
     console.log(Object.values(this.state));
     if (this.state.readyAddNestedTask !== "") {
       this.setState({ nestedToDo: joined });
@@ -81,9 +85,7 @@ class Description extends Component {
         </div>
         <div className='nestedList'>
           {this.state.nestedToDo.map((item) => (
-            // change to a checkbox
-            // eslint-disable-next-line react/jsx-key
-            <div id='nestedItem'> {item} </div>
+            <NestedToDo item={item} key={item.key} />
           ))}
         </div>
       </div>

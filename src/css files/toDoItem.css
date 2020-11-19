@@ -4,10 +4,16 @@
   margin-bottom: 10px;
   border-radius: 10px;
   position: relative;
+  display: flex;
 }
 
 .toDoItem .toDoCheck {
   margin-right: 10px;
+}
+
+.toDo {
+  display: inline-block;
+  max-width: 300px;
 }
 
 .indivMenu {

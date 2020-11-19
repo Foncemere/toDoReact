@@ -1,6 +1,7 @@
 [
   {
     "pageName": "Groceries",
+    "key": 6,
     "listedToDos": [
       {
         "key": 1,
@@ -24,7 +25,10 @@
         "taskName": "Party Supplies",
         "nested": true,
         "description": "",
-        "nestedToDo": ["Pizza", "Plastic Forks and Spoon"]
+        "nestedToDo": [
+          { "item": "Pizza", "key": 8 },
+          { "item": "Plastic Forks and Spoon", "key": 9 }
+        ]
       },
       {
         "key": 4,
@@ -39,6 +43,7 @@
   },
   {
     "pageName": "Work",
+    "key": 7,
     "listedToDos": [
       {
         "key": 5,

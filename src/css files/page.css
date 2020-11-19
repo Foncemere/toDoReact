@@ -54,7 +54,7 @@ hr {
 
 .page .footer .newTaskInput {
   border: none;
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid #000000;
   width: 300px;
   margin: 10px;
   font-size: 17px;
@@ -71,5 +71,5 @@ hr {
   width: 30px;
   height: 30px;
   border-radius: 15px;
-  border: 1px #d3d3d3 solid;
+  border: 1px #000000 solid;
 }

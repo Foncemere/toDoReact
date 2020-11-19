@@ -1,9 +1,6 @@
 /* this is for the description */
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
-* {
-  font-family: "Nanum Gothic", sans-serif;
-}
 .description {
   background: rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -14,7 +11,6 @@
   text-align: center;
   justify-content: center;
   box-shadow: -1px 0 10px rgba(0, 0, 0, 0.2);
-  transition: "transform 1s";
 }
 
 .nestedInputForm {
@@ -64,4 +60,13 @@
   margin: 10px;
   font-size: 14px;
   color: #ffffff;
+}
+
+.nestedItem {
+  margin-left: 5px;
+}
+
+.groupCheckbox {
+  display: flex;
+  padding: 5px;
 }
