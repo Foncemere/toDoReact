@@ -60,6 +60,11 @@
   margin: 10px;
   font-size: 14px;
   color: #ffffff;
+  outline: none;
+}
+
+.nestedInput::placeholder {
+  color: #ffffff;
 }
 
 .nestedItem {

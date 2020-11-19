@@ -15,8 +15,9 @@
 
 .paddles {
   position: relative;
+  bottom: 30px;
+  left: 38%;
   display: flex;
-  justify-content: center;
 }
 
 .paddle {
@@ -56,6 +57,7 @@
   flex-wrap: wrap;
   justify-content: center;
   color: white;
+  position: relative;
 }
 
 .swatch {

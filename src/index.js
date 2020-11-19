@@ -81,7 +81,8 @@ class App extends Component {
   handleTitleChange = (titleChanged, originalTitle) => {
     const updatedArray = this.state.pages.map((item) => {
       let temp = Object.assign({}, item);
-      if (temp.pageName === originalTitle) {
+      console.log(originalTitle);
+      if (temp.key === originalTitle) {
         temp.pageName = titleChanged;
       }
       return temp;
@@ -114,7 +115,6 @@ class App extends Component {
             </div>
           </div>
           <hr />
-          <p> Swatches </p>
           <div className='swatches'>
             <div
               className='swatch one'
@@ -180,7 +180,8 @@ class App extends Component {
             {this.state.pagesAvailable.map((item) => {
               return (
                 <Page
-                  key={item.key}
+                  key={this.state.pages[item].key}
+                  pageKey={this.state.pages[item].key}
                   {...this.state.pages[item]}
                   onTitleChange={this.handleTitleChange}
                 />

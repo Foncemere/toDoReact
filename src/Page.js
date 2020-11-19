@@ -60,7 +60,7 @@ class Page extends Component {
               value={this.state.pageName}
               onChange={(e) => {
                 this.setState({ pageName: e.target.value });
-                this.props.onTitleChange(e.target.value, this.state.pageName);
+                this.props.onTitleChange(e.target.value, this.props.pageKey);
               }}
             />
             <div className='toDoList'>{this.display()}</div>
