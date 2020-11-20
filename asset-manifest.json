@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/toDoReact/static/css/main.4fb10786.chunk.css",
+    "main.css": "/toDoReact/static/css/main.88078a58.chunk.css",
     "main.js": "/toDoReact/static/js/main.f0213f74.chunk.js",
     "main.js.map": "/toDoReact/static/js/main.f0213f74.chunk.js.map",
     "runtime-main.js": "/toDoReact/static/js/runtime-main.b12dd90d.js",
@@ -8,15 +8,15 @@
     "static/js/2.ef4abc89.chunk.js": "/toDoReact/static/js/2.ef4abc89.chunk.js",
     "static/js/2.ef4abc89.chunk.js.map": "/toDoReact/static/js/2.ef4abc89.chunk.js.map",
     "index.html": "/toDoReact/index.html",
-    "precache-manifest.711dea1bcbbf844008f26262dc1b5181.js": "/toDoReact/precache-manifest.711dea1bcbbf844008f26262dc1b5181.js",
+    "precache-manifest.4ef119c0b030b3ab06ccc5e61c48d435.js": "/toDoReact/precache-manifest.4ef119c0b030b3ab06ccc5e61c48d435.js",
     "service-worker.js": "/toDoReact/service-worker.js",
-    "static/css/main.4fb10786.chunk.css.map": "/toDoReact/static/css/main.4fb10786.chunk.css.map",
+    "static/css/main.88078a58.chunk.css.map": "/toDoReact/static/css/main.88078a58.chunk.css.map",
     "static/js/2.ef4abc89.chunk.js.LICENSE.txt": "/toDoReact/static/js/2.ef4abc89.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b12dd90d.js",
     "static/js/2.ef4abc89.chunk.js",
-    "static/css/main.4fb10786.chunk.css",
+    "static/css/main.88078a58.chunk.css",
     "static/js/main.f0213f74.chunk.js"
   ]
 }
