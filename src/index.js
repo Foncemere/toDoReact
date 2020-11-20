@@ -133,8 +133,8 @@ class App extends Component {
             <br />
             <div
               className='swatch four'
-              onClick={() => this.selectedColor("7b4397", "dc4024")}>
-              {"DAWN"}
+              onClick={() => this.selectedColor("eeabed", "6ae7e5")}>
+              {"SUGAR"}
             </div>
             <div
               className='swatch five'
@@ -149,8 +149,8 @@ class App extends Component {
             <br />
             <div
               className='swatch seven'
-              onClick={() => this.selectedColor("870000", "190A05")}>
-              {"KIN"}
+              onClick={() => this.selectedColor("3a6186", "89253e")}>
+              {"STAGE"}
             </div>
             <div
               className='swatch eight'
@@ -170,13 +170,13 @@ class App extends Component {
             </div>
             <div
               className='swatch eleven'
-              onClick={() => this.selectedColor("3a6186", "89253e")}>
-              {"STAGE"}
+              onClick={() => this.selectedColor("870000", "190A05")}>
+              {"KIN"}
             </div>
             <div
               className='swatch twelve'
-              onClick={() => this.selectedColor("1f4037", "99f2c8")}>
-              {"JADE"}
+              onClick={() => this.selectedColor("0B486B", "ec6b2a")}>
+              {"DUSK"}
             </div>
             <hr />
           </div>
