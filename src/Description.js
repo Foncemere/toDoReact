@@ -16,6 +16,16 @@ class Description extends Component {
     x: -360,
   };
 
+  pressEnter = (e) => {
+    if (e.key === "Enter") {
+      this.handleNestedClick();
+    }
+  };
+
+  handleDeleteCloseDescription = () => {
+    this.setState({ descVisibility: false, x: -360, pointerEvents: "none" });
+  };
+
   handleDescription = (prop) => {
     this.setState({
       titleProp: prop.taskName,
@@ -73,6 +83,7 @@ class Description extends Component {
         <div className='nestedInputForm'>
           <input
             className='nestedInput'
+            onKeyDown={this.pressEnter}
             onChange={(e) =>
               this.setState({ readyAddNestedTask: e.target.value })
             }

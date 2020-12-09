@@ -11,6 +11,11 @@ function ToDoItem(prop) {
     setCrossed(!crossed);
   }
 
+  function callDelete() {
+    prop.delete(prop.item.key);
+    prop.descRef.current.handleDeleteCloseDescription();
+  }
+
   return (
     <div className='toDoItem'>
       <input type='checkbox' className='toDoCheck' onClick={callCheck} />
@@ -22,10 +27,7 @@ function ToDoItem(prop) {
         }}>
         {prop.item.taskName}
       </div>
-      <SvgDelete
-        className='indivMenu del'
-        onClick={() => prop.delete(prop.item.key)}
-      />
+      <SvgDelete className='indivMenu del' onClick={callDelete} />
       <SvgMenu
         className='indivMenu desc'
         onClick={() => prop.descRef.current?.handleDescription?.(prop.item)}

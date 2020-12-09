@@ -50,6 +50,12 @@ class Page extends Component {
     document.getElementsByClassName("newTaskInput")[0].value = "";
   };
 
+  pressEnter = (e) => {
+    if (e.key === "Enter") {
+      this.handleClick();
+    }
+  };
+
   render() {
     return (
       <div className='parentContainer'>
@@ -70,6 +76,7 @@ class Page extends Component {
                 onClick={this.handleClick}
               />
               <input
+                onKeyDown={this.pressEnter}
                 className='newTaskInput'
                 onChange={(e) =>
                   this.setState({ readyAddTask: e.target.value })
